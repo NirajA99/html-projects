@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        #clock{
+            width: 150px;
+            height: 50px;
+            font-size: 35px;
+            
+            background-color: aquamarine;
+            color: black;
+            border: 2px solid gray;
+            line-height: 50px;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+<body>
+    <center><div id="clock"></div></center>
+   
+    
+    <script>
+        debugger
+        setInterval(clock,1000)
+        function clock ()  {
+            
+            let localDate = new Date();
+            let hours = localDate.getHours();
+            let minutes = localDate.getMinutes();
+            let seconds = localDate.getSeconds();
+
+            
+            
+
+            document.getElementById('clock').innerHTML = hours + ':' + minutes + ':' + seconds;
+        }
+    </script>
+</body>
+</html>

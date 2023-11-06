@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        /* nav{
+            background-color: rgb(85, 45, 45);
+        }
+        ul{
+            padding-left: 0;
+        }
+         li{
+            outline: 1px solid cyan;
+            
+            color: rgb(204, 180, 192);
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            
+        }
+        #dropdown {
+            display: none;
+            position: absolute;
+           
+            
+            
+        }
+        #dropdown-menu li{
+            display: block;
+            cursor: pointer;
+            
+        } */
+        .dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+    </style>
+</head>
+<body>
+    <nav>
+       <ul>
+        <li>Home</li>
+        <li id="dropdown" onclick="menu()" >Home
+            <ul id="dropdown-menu">
+                <li>dropdown</li>
+                <li>dropdown</li>
+                <li>dropdown</li>
+                <li>dropdown</li>
+                <li>dropdown</li>
+            </ul>
+        </li>
+        <li>Home</li>
+        <li>Home</li>
+        <li>Home</li>
+       </ul>
+    </nav>
+
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+
+
+    <script>
+        /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+    console.log(event);
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+    </script>
+</body>
+</html>
